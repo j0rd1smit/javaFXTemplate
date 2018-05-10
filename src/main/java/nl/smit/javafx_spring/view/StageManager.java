@@ -1,4 +1,4 @@
-package nl.smit.scheduler.referee.view;
+package nl.smit.javafx_spring.view;
 
 import javafx.application.Platform;
 import javafx.scene.Node;
@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import lombok.RequiredArgsConstructor;
-import nl.smit.scheduler.referee.spring.config.SpringFxmlLoader;
+import nl.smit.javafx_spring.spring.config.SpringFxmlLoader;
 import org.slf4j.Logger;
 
 import java.io.IOException;

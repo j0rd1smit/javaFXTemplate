@@ -1,4 +1,4 @@
-package nl.smit.scheduler.referee.helper.extension;
+package nl.smit.javafx_spring.referee.helper.extension;
 
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.junit.jupiter.api.extension.ExtensionContext;

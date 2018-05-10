@@ -1,4 +1,4 @@
-package nl.smit.scheduler.referee.controller;
+package nl.smit.javafx_spring.controller;
 
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

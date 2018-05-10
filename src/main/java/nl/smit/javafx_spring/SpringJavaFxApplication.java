@@ -1,17 +1,18 @@
-package nl.smit.scheduler.referee;
+package nl.smit.javafx_spring;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
 import lombok.AccessLevel;
 import lombok.Getter;
-import nl.smit.scheduler.referee.view.IViewFxml;
-import nl.smit.scheduler.referee.view.StageManager;
+import nl.smit.javafx_spring.view.IViewFxml;
+import nl.smit.javafx_spring.view.StageManager;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.MonotonicNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+
+import java.util.ResourceBundle;
 
 /**
  * Responsible for starting the spring javafx application.
@@ -31,6 +32,7 @@ public abstract class SpringJavaFxApplication extends Application {
     @EnsuresNonNull("springContext")
     public void init() {
         springContext = bootstrapSpringApplicationContext();
+        createResourceBundleBean();
     }
 
     private ConfigurableApplicationContext bootstrapSpringApplicationContext() {
@@ -44,6 +46,17 @@ public abstract class SpringJavaFxApplication extends Application {
     }
 
     protected abstract Class getApplicationClass();
+
+    @RequiresNonNull("springContext")
+    private void createResourceBundleBean() {
+        ResourceBundle resourceBundle = ResourceBundle.getBundle(getResourceBundlePath());
+        springContext.getBeanFactory().registerSingleton("ResourceBundle", resourceBundle);
+    }
+
+    /**
+     * @return The path to the resources bundle.
+     */
+    protected abstract String getResourceBundlePath();
 
     @Override
     @EnsuresNonNull("stageManager")

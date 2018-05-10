@@ -1,9 +1,10 @@
-package nl.smit.scheduler.referee;
+package nl.smit.javafx_spring;
 
 import javafx.application.Application;
-import nl.smit.scheduler.referee.view.IViewFxml;
-import nl.smit.scheduler.referee.view.ViewFxml;
+import nl.smit.javafx_spring.view.ViewFxml;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import nl.smit.javafx_spring.view.IViewFxml;
 
 /**
  * [Explation]
@@ -15,6 +16,12 @@ public class SimpleApp extends SpringJavaFxApplication {
 
     public static void main(String[] args) {
         Application.launch(args);
+    }
+
+
+    @Override
+    protected String getResourceBundlePath() {
+        return "Bundle";
     }
 
     @Override

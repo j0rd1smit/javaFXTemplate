@@ -1,10 +1,10 @@
-package nl.smit.scheduler.referee.controller;
+package nl.smit.javafx_spring.controller;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import lombok.RequiredArgsConstructor;
-import nl.smit.scheduler.referee.view.StageManager;
-import nl.smit.scheduler.referee.view.ViewFxml;
+import nl.smit.javafx_spring.view.StageManager;
+import nl.smit.javafx_spring.view.ViewFxml;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;

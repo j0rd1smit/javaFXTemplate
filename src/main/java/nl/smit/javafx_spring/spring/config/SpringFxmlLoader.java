@@ -1,10 +1,11 @@
-package nl.smit.scheduler.referee.spring.config;
+package nl.smit.javafx_spring.spring.config;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -16,7 +17,7 @@ import java.util.ResourceBundle;
  * @author Jordi Smit, 8-2-2018.
  */
 @Component
-@AllArgsConstructor(onConstructor = @__(@Autowired))
+@AllArgsConstructor(onConstructor = @__({@Autowired, @Lazy}))
 public class SpringFxmlLoader {
     private final ResourceBundle resourceBundle;
     private final ApplicationContext context;

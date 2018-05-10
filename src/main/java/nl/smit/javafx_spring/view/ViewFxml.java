@@ -1,4 +1,4 @@
-package nl.smit.scheduler.referee.view;
+package nl.smit.javafx_spring.view;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

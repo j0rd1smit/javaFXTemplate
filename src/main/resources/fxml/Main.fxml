@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../fxml/css/custom.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.smit.scheduler.referee.controller.MainController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../fxml/css/custom.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.smit.javafx_spring.controller.MainController">
     <Pane layoutX="175.0" layoutY="80.0" prefHeight="219.0" prefWidth="207.0" styleClass="panel">
     <Label layoutX="65.0" layoutY="45.0" text="Main">
       <font>

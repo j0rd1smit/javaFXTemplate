@@ -1,7 +1,7 @@
-package nl.smit.scheduler.referee.spring.config;
+package nl.smit.javafx_spring.spring.config;
 
 import javafx.stage.Stage;
-import nl.smit.scheduler.referee.view.StageManager;
+import nl.smit.javafx_spring.view.StageManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,13 +17,14 @@ import java.util.ResourceBundle;
 @Configuration
 public class AppJavaConfig {
     @Autowired
+    @Lazy
     @SuppressWarnings("nullness")
     private SpringFxmlLoader springFxmlLoader;
 
-    @Bean
+    /*@Bean
     public ResourceBundle resourceBundle() {
-        return ResourceBundle.getBundle("Bundle");
-    }
+        return ResourceBundle.getBundle("bundle");
+    }*/
 
     @Bean
     @Lazy(value = true)

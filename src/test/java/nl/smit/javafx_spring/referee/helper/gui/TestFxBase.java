@@ -1,15 +1,14 @@
-package nl.smit.scheduler.referee.helper.gui;
+package nl.smit.javafx_spring.referee.helper.gui;
 
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
 import lombok.AccessLevel;
 import lombok.Getter;
-import nl.smit.scheduler.referee.SpringJavaFxApplication;
+import nl.smit.javafx_spring.SpringJavaFxApplication;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.testfx.api.FxToolkit;
 import org.testfx.framework.junit5.ApplicationTest;
 import org.testfx.util.WaitForAsyncUtils;

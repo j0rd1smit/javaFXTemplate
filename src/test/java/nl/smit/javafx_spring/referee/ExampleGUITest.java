@@ -1,10 +1,10 @@
-package nl.smit.scheduler.referee;
+package nl.smit.javafx_spring.referee;
 
-import nl.smit.scheduler.referee.helper.gui.TestFxBase;
-import nl.smit.scheduler.referee.view.ViewFxml;
+import nl.smit.javafx_spring.SimpleApp;
+import nl.smit.javafx_spring.referee.helper.gui.TestFxBase;
+import nl.smit.javafx_spring.view.ViewFxml;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
