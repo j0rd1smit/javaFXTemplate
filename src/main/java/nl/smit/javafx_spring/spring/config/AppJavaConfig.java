@@ -21,11 +21,6 @@ public class AppJavaConfig {
     @SuppressWarnings("nullness")
     private SpringFxmlLoader springFxmlLoader;
 
-    /*@Bean
-    public ResourceBundle resourceBundle() {
-        return ResourceBundle.getBundle("bundle");
-    }*/
-
     @Bean
     @Lazy(value = true)
     public StageManager stageManager(Stage stage) {

@@ -49,14 +49,13 @@ public abstract class SpringJavaFxApplication extends Application {
 
     @RequiresNonNull("springContext")
     private void createResourceBundleBean() {
-        ResourceBundle resourceBundle = ResourceBundle.getBundle(getResourceBundlePath());
-        springContext.getBeanFactory().registerSingleton("ResourceBundle", resourceBundle);
+        springContext.getBeanFactory().registerSingleton("ResourceBundle", getResourceBundle());
     }
 
     /**
-     * @return The path to the resources bundle.
+     * @return The the resources bundle.
      */
-    protected abstract String getResourceBundlePath();
+    protected abstract ResourceBundle getResourceBundle();
 
     @Override
     @EnsuresNonNull("stageManager")
