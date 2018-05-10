@@ -136,7 +136,7 @@
             <version>${checkerframework.plugin.version}</version>
         </dependency>
 
-        
+
         <!-- GUI jfoenix -->
         <dependency>
             <groupId>com.jfoenix</groupId>
