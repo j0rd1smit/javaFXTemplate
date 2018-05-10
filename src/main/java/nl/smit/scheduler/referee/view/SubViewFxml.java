@@ -9,7 +9,7 @@ import lombok.Getter;
  * @author Jordi Smit, 8-2-2018.
  */
 @AllArgsConstructor
-public enum SubViewFxml {
+public enum SubViewFxml implements ISubViewFxml {
 
     EXAMPLE("");
 

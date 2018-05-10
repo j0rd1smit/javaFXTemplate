@@ -30,7 +30,7 @@ public class StageManager {
      * Changes the scene of the primary stage to a new view.
      * @param view The requested view.
      */
-    public void switchScene(ViewFxml view) {
+    public void switchScene(IViewFxml view) {
         Parent rootNode = loadView(view.getFilePath());
         showView(rootNode, view.getTitle());
     }
@@ -80,7 +80,7 @@ public class StageManager {
      * @param subView The requested subview.
      * @param container The contrainer that will hold the new fxml.
      */
-    public void loadSubScene(SubViewFxml subView, Pane container) {
+    public void loadSubScene(ISubViewFxml subView, Pane container) {
         Node rootNode = loadView(subView.getFilePath());
         container.getChildren().setAll(rootNode);
     }

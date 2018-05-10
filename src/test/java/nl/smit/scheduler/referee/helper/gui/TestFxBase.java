@@ -5,17 +5,15 @@ import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
 import lombok.AccessLevel;
 import lombok.Getter;
-import nl.smit.scheduler.referee.RefereeApplication;
-import org.flywaydb.core.Flyway;
+import nl.smit.scheduler.referee.SpringJavaFxApplication;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.testfx.api.FxToolkit;
 import org.testfx.framework.junit5.ApplicationTest;
 import org.testfx.util.WaitForAsyncUtils;
 
-import java.util.ResourceBundle;
 import java.util.concurrent.TimeoutException;
 
 /**
@@ -23,60 +21,55 @@ import java.util.concurrent.TimeoutException;
  *
  * @author Jordi Smit, 8-2-2018.
  */
-public class TestFxBase extends ApplicationTest {
-
-    @SuppressWarnings("nullness")
-    @Getter(AccessLevel.PROTECTED)
-    private static ResourceBundle bundle;
+public abstract class TestFxBase extends ApplicationTest {
 
     @Getter(AccessLevel.PROTECTED)
     @SuppressWarnings("nullness")
     private Stage primaryStage;
-    @SuppressWarnings("nullness")
-    private RefereeApplication application;
+
 
 
     @BeforeAll
     static void beforeAll() {
-        bundle = ResourceBundle.getBundle("Bundle");
-        boolean headless = Boolean.parseBoolean(bundle.getString("tests.testfx.headless"));
-        if (headless) {
-            System.setProperty("testfx.robot", "glass");
-            System.setProperty("testfx.headless", "true");
-            System.setProperty("prism.order", "sw");
-            System.setProperty("prism.text", "t2k");
-            System.setProperty("java.awt.headless", "true");
-        }
+        doNotDisplayGUIDuringTest();
+    }
+
+    private static void doNotDisplayGUIDuringTest() {
+        System.setProperty("testfx.robot", "glass");
+        System.setProperty("testfx.headless", "true");
+        System.setProperty("prism.order", "sw");
+        System.setProperty("prism.text", "t2k");
+        System.setProperty("java.awt.headless", "true");
+    }
+
+    protected static void displayGUIDuringTest() {
+        System.setProperty("testfx.robot", "glass");
+        System.setProperty("testfx.headless", "false");
+        System.setProperty("prism.order", "sw");
+        System.setProperty("prism.text", "t2k");
+        System.setProperty("java.awt.headless", "false");
     }
 
     @BeforeEach
     void beforeEachTestFXBase() throws TimeoutException {
         FxToolkit.registerPrimaryStage();
-        application = (RefereeApplication) FxToolkit.setupApplication(getApplicationClass());
+        FxToolkit.setupApplication(getApplicationClass());
     }
 
-    protected Class getApplicationClass() {
-        return RefereeApplication.class;
-    }
-
-    protected ConfigurableApplicationContext getSpringContext() {
-        ConfigurableApplicationContext springContext = application.getSpringContext();
-        if (springContext == null) {
-            throw new RuntimeException("Should not be null at this point.");
-        }
-        return springContext;
-    }
+    /**
+     *
+     * @param <T> The type of the class.
+     * @return The application class to test.
+     */
+    protected abstract <T extends SpringJavaFxApplication> Class<T> getApplicationClass();
 
     @AfterEach
     void afterEachTestFXBase() throws TimeoutException {
         FxToolkit.hideStage();
         release(new KeyCode[]{});
         release(new MouseButton[]{});
-
-        Flyway flyway = getSpringContext().getBean(Flyway.class);
-        flyway.migrate();
-        flyway.clean();
     }
+
 
     @Override
     public void start(Stage stage) {

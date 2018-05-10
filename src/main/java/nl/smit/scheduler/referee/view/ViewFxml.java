@@ -9,7 +9,7 @@ import lombok.Getter;
  * @author Jordi Smit, 8-2-2018.
  */
 @AllArgsConstructor
-public enum ViewFxml {
+public enum ViewFxml implements IViewFxml {
 
     MAIN("MAIN", "/fxml/Main.fxml"),
     NOT_MAIN("NOT MAIN", "/fxml/NotMain.fxml");
