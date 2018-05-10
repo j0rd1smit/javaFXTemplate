@@ -11,6 +11,7 @@ import org.checkerframework.checker.nullness.qual.MonotonicNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.util.ResourceBundle;
 
@@ -19,6 +20,7 @@ import java.util.ResourceBundle;
  *
  * @author Jordi Smit on 10-5-2018.
  */
+@ComponentScan("nl.smit.javafx_spring")
 public abstract class SpringJavaFxApplication extends Application {
 
     @MonotonicNonNull

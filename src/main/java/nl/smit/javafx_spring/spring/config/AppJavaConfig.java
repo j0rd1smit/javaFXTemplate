@@ -1,6 +1,7 @@
 package nl.smit.javafx_spring.spring.config;
 
 import javafx.stage.Stage;
+import lombok.RequiredArgsConstructor;
 import nl.smit.javafx_spring.view.StageManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -15,11 +16,10 @@ import java.util.ResourceBundle;
  * @author Jordi Smit, 8-2-2018.
  */
 @Configuration
+@RequiredArgsConstructor(onConstructor = @__({@Autowired, @Lazy}))
 public class AppJavaConfig {
-    @Autowired
-    @Lazy
-    @SuppressWarnings("nullness")
-    private SpringFxmlLoader springFxmlLoader;
+    private final SpringFxmlLoader springFxmlLoader;
+
 
     @Bean
     @Lazy(value = true)
