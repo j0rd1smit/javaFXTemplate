@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import lombok.RequiredArgsConstructor;
-import nl.smit.javafx_spring.spring.config.SpringFxmlLoader;
 import org.slf4j.Logger;
 
 import java.io.IOException;
@@ -76,7 +75,7 @@ public class StageManager {
     }
 
     /**
-     * Replaces the content of a container with a the FXML of a {@link SubViewFxml}.
+     * Replaces the content of a container with a the FXML of a {@link ISubViewFxml}.
      * @param subView The requested subview.
      * @param container The contrainer that will hold the new fxml.
      */
