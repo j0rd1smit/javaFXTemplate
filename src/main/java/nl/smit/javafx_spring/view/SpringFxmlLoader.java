@@ -1,4 +1,4 @@
-package nl.smit.javafx_spring.spring.config;
+package nl.smit.javafx_spring.view;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -2,13 +2,12 @@ package nl.smit.javafx_spring.spring.config;
 
 import javafx.stage.Stage;
 import lombok.RequiredArgsConstructor;
+import nl.smit.javafx_spring.view.SpringFxmlLoader;
 import nl.smit.javafx_spring.view.StageManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
-
-import java.util.ResourceBundle;
 
 /**
  * Responsible for declaring the default bean that spring will use.
